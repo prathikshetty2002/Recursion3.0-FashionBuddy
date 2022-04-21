@@ -4,6 +4,7 @@ import SEO from "../next-seo.config";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { AnimatePresence, domAnimation, LazyMotion } from "framer-motion";
+import Header from "../components/Header";
 
 // import { IKContext} from 'imagekitio-react'; //download npm imagekitio-react
 
@@ -71,6 +72,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <DefaultSeo {...SEO} />
                 <LazyMotion features={domAnimation}>
                     <AnimatePresence exitBeforeEnter>
+                        <Header />
                         <Component {...pageProps} />
                     </AnimatePresence>
                 </LazyMotion>

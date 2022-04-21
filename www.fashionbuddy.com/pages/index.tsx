@@ -1,6 +1,7 @@
 import { LazyMotion, m } from "framer-motion";
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
+import Card from "../components/Card";
 
 // import { SwiperSlide, Swiper } from "swiper/react"; //install npm swiper
 // import 'swiper/css'; //swiper styles, add more based upon features used
@@ -54,6 +55,9 @@ const Home: NextPage = () => {
                 y: 50,
             }}
         >
+            <header>
+                
+            </header>
             <main>
                 {/* Container for swiper */}
             {/* <div className="w-11/12 md-w-full relative z-0"> 
@@ -69,10 +73,16 @@ const Home: NextPage = () => {
                     {slides}
                 </Swiper>
             </div> */}
-              <h1>Home</h1>
+
+                <div>
+                    <Card id="1" name="Zara tshirt" price={599} rating={3}  />
+                    <Card id="2" name="Zara tshirt" price={599} rating={3}  />
+                    <Card id="3" name="Zara tshirt" price={599} rating={3}  />
+                </div>
+
             </main>
 
-            <Footer />
+            {/* <Footer /> */}
         </m.div>
     );
 };
