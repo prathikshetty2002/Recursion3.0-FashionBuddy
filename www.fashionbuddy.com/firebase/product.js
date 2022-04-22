@@ -30,9 +30,16 @@ function addToCart(newCart) {
   });
 }
 
+function submitOrders(cart) {
+  const currentUser = auth.currentUser.uid;
+  return db.collection("Users").doc(currentUser).update({
+    orders: firebase.firestore.FieldValue.arrayUnion(cart),
+  });
+} 
+
 async function getProductImageUrl(photoUrl) {
   const storageRef = firebase.storage().ref()
   return await storageRef.child(`/products/${photoUrl}`).getDownloadURL()
 }
 
-export { addFavorite, removeFavorite, addToCart, getProductImageUrl };
+export { addFavorite, removeFavorite, addToCart, getProductImageUrl, submitOrders };

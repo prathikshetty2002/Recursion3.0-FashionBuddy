@@ -14,7 +14,6 @@ export default function ProductCard({
   brand,
   name,
   price,
-  sale_price,
   image,
   favorite,
   ...props
@@ -76,18 +75,18 @@ export default function ProductCard({
           <h4 className={styles.brandText}>{brand}</h4>
         </Link>
         <h4>{name}</h4>
-        {sale_price ? (
+        {price ? (
           <div className={styles.priceContainer}>
             {/* <div className={styles.discount}>
               {(((price - sale_price) / price) * 100) | 0}%
             </div> */}
             <div className={styles.prices}>
               {/* <span className={styles.priceText}>{price}$</span> */}
-              <span className={styles.salePriceText}>{sale_price}$</span>
+              <span className={styles.salePriceText}>{price}$</span>
             </div>
           </div>
         ) : (
-          <span className={styles.price}>{price || 0}$</span>
+          <span className={styles.price}>{0}$</span>
         )}
       </div>
     </div>

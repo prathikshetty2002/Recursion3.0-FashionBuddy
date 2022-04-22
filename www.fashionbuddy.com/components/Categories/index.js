@@ -31,19 +31,14 @@ export default function CategoriesBar() {
           link="/category/accessories"
         />
         <CategoryItem
-          name="Activewear"
+          name="Personal Care"
           emoji="🤸"
-          link="/category/activewear"
+          link="/category/Personal Care"
         />
         <CategoryItem
           name="Gifts & Living"
           emoji="🎁"
-          link="/category/gifts_and_living"
-        />
-        <CategoryItem
-          name="Inspiration"
-          emoji="💎"
-          link="/category/inspiration"
+          link="/category/Free Items"
         />
       </ul>
       <div className={styles.helpContainer}>

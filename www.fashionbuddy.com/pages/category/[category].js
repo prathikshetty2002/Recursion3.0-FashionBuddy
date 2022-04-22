@@ -14,7 +14,6 @@ const getEmoji = {
   accessories: "👜",
   activewear: "🤸",
   gifts_and_living: "🎁",
-  inspiration: "💎",
 };
 
 export default function Category({ data, query }) {

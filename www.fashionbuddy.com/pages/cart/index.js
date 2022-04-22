@@ -7,8 +7,9 @@ import { useCart, useCartOnce } from "hooks/cart.hook";
 import React, { useEffect, useState } from "react";
 import { auth, db } from "@/config/firebase";
 import { useAuth } from "@/firebase/context";
-import { addToCart } from "@/firebase/product";
+import { addToCart, submitOrders } from "@/firebase/product";
 import { useRouter } from "next/router";
+import Button from "@/components/Button";
 
 export default function CartPage() {
   const { user, loading } = useAuth();
@@ -54,6 +55,11 @@ export default function CartPage() {
     addToCart(newCart);
   };
 
+  const submitOrder = () => { 
+    submitOrders(data)
+    addToCart({})
+  }
+
   const subCartEvent = (id) => {
     let newCart = {...data}
     if(data[id] === 1) {
@@ -83,6 +89,11 @@ addToCart(newCart);
           <div className={styles.header}>
             <h1 className={styles.title}>My Cart</h1>
             <h4>You have {cartLength} items in your cart</h4>
+            {!!cartLength && <span style={{width: '300px'}} >
+            <Button style={{ margin: 0 }} onClick={addCartEvent}>
+                Buy Now
+              </Button>
+              </span>}
           </div>
           {Object.keys(data).map((item, index) => {
             return (
@@ -95,6 +106,11 @@ addToCart(newCart);
               />
             );
           })}
+          {!!cartLength && <span style={{display: 'block', width: '300px'}} >
+            <Button style={{ margin: 0 }} onClick={submitOrder}>
+                Buy Now
+              </Button>
+              </span>}
         </main>
       </div>
     </Layout>

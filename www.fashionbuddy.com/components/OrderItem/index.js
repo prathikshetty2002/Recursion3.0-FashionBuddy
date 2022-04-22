@@ -7,18 +7,18 @@ import { useAddress } from "hooks/address.hook";
 export default function OrderItem({ data }) {
   const address = useAddress(data.address);
   const { title, region, city, full_address, zipcode } = address.data;
-  console.log(new Date(data.date));
-  console.log(data.date);
+  // console.log(new Date(data.date));
+  // console.log(data.date);
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <div>
+      {/* <div className={styles.header}> */}
+        {/* <div>
           <h4>Order date</h4>
           <span>{format(data.date, "MM.dd.yyyy - HH:mm")}</span>
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           <h4>Order Summary</h4>
-          <span>{data.products.length} product</span>
+          <span>{data.length} product</span>
         </div>
         <div>
           <h4>Status</h4>
@@ -28,9 +28,9 @@ export default function OrderItem({ data }) {
           <h4>Price</h4>
           <span>{data.total_price} $</span>
         </div>
-      </div>
+      </div> */}
       <hr />
-      <div className={styles.productPhotos}>
+      {/* <div className={styles.productPhotos}>
         <img
           className={styles.photo}
           src="https://productimages.hepsiburada.net/s/34/120/10426321043506.jpg"
@@ -60,7 +60,8 @@ export default function OrderItem({ data }) {
             </>
           )}
         </details>
-      </div>
+      </div> */}
+      
     </div>
   );
 }

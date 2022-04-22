@@ -48,8 +48,8 @@ export default function Favorites() {
                   key={product.id}
                   id={product.id}
                   brand={product.brand}
-                  name={product.product_name}
-                  image={product.cover_photo}
+                  name={product.name}
+                  image={product.image}
                   price={product.price}
                   sale_price={product.sale_price}
                   favorite={user?.favorites?.includes(product.id)}
