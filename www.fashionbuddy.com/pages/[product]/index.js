@@ -17,7 +17,7 @@ import ErrorPage from "pages/404";
 import { useRouter } from "next/router";
 
 export default function Product({ data, query }) {
-  if (!data.product_name) {
+  if (!data.name) {
     return <ErrorPage />;
   }
 
@@ -31,13 +31,9 @@ export default function Product({ data, query }) {
 
   const {
     brand,
-    cover_photo,
-    information,
-    photos,
+    image,
     price,
-    product_name,
-    sale_price,
-    sizes,
+    name
   } = data;
 
   const id = query?.product;
@@ -71,22 +67,12 @@ export default function Product({ data, query }) {
     if (!user && !loading && typeof window !== "undefined")
       router.push("/login");
     else {
-      if (selectedSize) {
+
         const newCart = {
           ...cart,
-          [id]: cart.hasOwnProperty(id)
-            ? [...cart[id], selectedSize]
-            : [selectedSize],
-        };
+          [id]: data.hasOwnProperty(id) ? data[id]+1 : 1,
+        };  
         addToCart(newCart);
-      }
-      if (sizes?.length === 0) {
-        const newCart = {
-          ...cart,
-          [id]: cart.hasOwnProperty(id) ? [...cart[id], "-"] : ["-"],
-        };
-        addToCart(newCart);
-      }
     }
   };
 
@@ -101,9 +87,9 @@ export default function Product({ data, query }) {
         <main className={styles.main}>
           <div className={styles.photosContainer}>
             <div className={styles.carouselContainer}>
-              <img src={photos[selectedPhoto]} loading="lazy" />
+              <img src={`https://ik.imagekit.io/okaydokeymypath/tr:e-sharpen-100/products/${image}`}  loading="lazy" />
             </div>
-            <div className={styles.smallPhotos}>
+            {/* <div className={styles.smallPhotos}>
               {photos.slice(0, 5).map((image, index) => {
                 return (
                   <img
@@ -116,23 +102,23 @@ export default function Product({ data, query }) {
                   />
                 );
               })}
-            </div>
+            </div> */}
             <hr />
           </div>
           <div className={styles.productInfos}>
             <div className={styles.header}>
-              <h1 className={styles.productTitle}>{product_name || ""}</h1>
+              <h1 className={styles.productTitle}>{name || ""}</h1>
               <Link href={`/brand/${brand}`}>{brand || ""}</Link>
             </div>
-            <span className={styles.priceText}>{price || 0}$</span>
+            {/* <span className={styles.priceText}>{price || 0}$</span> */}
             <div className={styles.saleContainer}>
-              <span className={styles.saleText}>{sale_price || 0}$</span>
-              <span className={styles.savedText}>
+              <span className={styles.saleText}>{price || 0}$</span>
+              {/* <span className={styles.savedText}>
                 {"(You will be saved " + (price - sale_price) + "$!)"}
-              </span>
+              </span> */}
             </div>
             <hr />
-            <div className={styles.sizes}>
+            {/* <div className={styles.sizes}>
               <h4 className={styles.sizesText}>Sizes</h4>
               {sizes.map((size) => {
                 return (
@@ -149,8 +135,8 @@ export default function Product({ data, query }) {
                   </button>
                 );
               })}
-            </div>
-            <hr />
+            </div> */}
+            {/* <hr /> */}
             <div className={styles.buttons}>
               <Button style={{ margin: 0 }} onClick={addCartEvent}>
                 Add to Cart
@@ -163,11 +149,11 @@ export default function Product({ data, query }) {
                 )}
               </button>
             </div>
-            <hr />
-            <div className={styles.infoContainer}>
+            {/* <hr /> */}
+            {/* <div className={styles.infoContainer}>
               <h4 className={styles.sizesText}>Product Information</h4>
               <p className={styles.infoText}>{information}</p>
-            </div>
+            </div> */}
           </div>
         </main>
       </div>
@@ -186,7 +172,7 @@ Product.getInitialProps = async function ({ query }) {
       data = { id: doc.id, ...doc.data() };
     })
     .catch((e) => (error = e));
-
+  console.log(data)
   return {
     data,
     error,

@@ -4,7 +4,7 @@ import styles from "./product.module.scss";
 import HeartIcon from "@/icons/heart";
 import Link from "next/link";
 import HeartFilled from "@/icons/heart-filled";
-import { addFavorite, getProductImageUrl, removeFavorite } from "@/firebase/product";
+import { addFavorite, removeFavorite } from "@/firebase/product";
 import { useRouter } from "next/router";
 import { useAuth } from "@/firebase/context";
 
@@ -20,7 +20,7 @@ export default function ProductCard({
   ...props
 }) {
   const [isFavorite, setFavorite] = useState(favorite);
-  const [imageUrl, setImageUrl] = useState("");
+  // const [imageUrl, setImageUrl] = useState("");
 
   const { user, loading } = useAuth();
 
@@ -35,10 +35,10 @@ export default function ProductCard({
     setFavorite(true);
   };
 
-  useEffect(() => {
-    const url = getProductImageUrl(image);
-    setImageUrl(url)
-  },[])
+  // useEffect(() => {
+  //   const url = getProductImageUrl(image);
+  //   setImageUrl(url)
+  // },[])
 
   const favoriteEvent = () => {
     if (user && !loading) isFavorite ? removeEvent(id) : addEvent(id);
@@ -69,7 +69,7 @@ export default function ProductCard({
         )}
       </button>
       <div className={styles.imageContainer}>
-        {image && <img className={styles.image} src={image} loading="lazy" />}
+        {!!image && <img className={styles.image} src={`https://ik.imagekit.io/okaydokeymypath/products/${image}`} loading="lazy" />}
       </div>
       <div className={styles.textContainer}>
         <Link href={`/brand/${brand}`}>
@@ -78,11 +78,11 @@ export default function ProductCard({
         <h4>{name}</h4>
         {sale_price ? (
           <div className={styles.priceContainer}>
-            <div className={styles.discount}>
+            {/* <div className={styles.discount}>
               {(((price - sale_price) / price) * 100) | 0}%
-            </div>
+            </div> */}
             <div className={styles.prices}>
-              <span className={styles.priceText}>{price}$</span>
+              {/* <span className={styles.priceText}>{price}$</span> */}
               <span className={styles.salePriceText}>{sale_price}$</span>
             </div>
           </div>

@@ -54,10 +54,10 @@ export default function Category({ data, query }) {
                     key={product.id}
                     id={product.id}
                     brand={product.brand}
-                    name={product.product_name}
-                    image={product.cover_photo}
+                    name={product.name}
+                    image={product.image}
                     price={product.price}
-                    sale_price={product.sale_price}
+                    sale_price={product.price}
                     favorite={user?.favorites?.includes(product.id)}
                   />
                 );
@@ -85,7 +85,7 @@ Category.getInitialProps = async function ({ query }) {
       data = products;
     })
     .catch((e) => (error = e));
-  // console.log(data)
+  console.log(data)
   return {
     data,
     error,

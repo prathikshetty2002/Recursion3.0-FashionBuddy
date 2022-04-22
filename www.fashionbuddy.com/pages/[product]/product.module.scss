@@ -36,6 +36,7 @@
           display: flex;
         }
         img {
+          width: 60%;
           max-width: 90vw;
 
           @include md {
