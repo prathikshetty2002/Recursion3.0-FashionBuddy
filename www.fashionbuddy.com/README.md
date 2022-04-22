@@ -9,7 +9,7 @@
   <h4 align="center">Demo: <a href="https://next-e-commerce-example.vercel.app/">https://next-e-commerce-example.vercel.app/</a></h4>
 
   <p align="center">
-    An e-commerce website example built with Next.js that I made in 1 week as a self challenge. There are some issues that I will handle later. Using Firebase as backend.
+    An e-commerce website example built with Next.js  Using Firebase as backend.
     <br />
     <br />
   
@@ -144,24 +144,7 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<!-- Q & A -->
 
-## Q & A
-
-- Question: I created Firebase project but I do not familiar with it. What should I do then?
-  **Answer**: You can contact me about setting your Firebase project, I would gladly help you.
-
-- Question: I created Firebase project but I do not have database structure. What should I do then?
-  **Answer**: Please contact me to get database structure I created.
-
-- Question: Why did not you share your database structure?
-  **Answer**: I just want to know if someone is interest in this project :D
-
-- Question: How can I contribute?
-  **Answer**: It makes me happy even if you just star this project. For code [contributes](#contributing), you can fork the repo and open a pull request after your changes. Any feedback is also important for me. You can open issue or send me message.
-
-- Question: Did you design UI?
-  **Answer**: No, I did not design actually. I found home page design on Dribbble by [Anton Mikhaltsov](https://dribbble.com/shots/9404340-Shop-Clothing-Web-Page). Except home page, other UI choices is mine. While I made this website in limited time, I did not think on UI/UX a lot. So you can also feedback me about design.
 
 <!-- LICENSE -->
 
