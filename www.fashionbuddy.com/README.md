@@ -1,7 +1,9 @@
 <br />
 <p align="center">
-  
-    <img src="https://i.ibb.co/ZzG3GtN/index.png" alt="Header photo" >
+
+![Screenshot (162)](https://user-images.githubusercontent.com/63772910/164757993-5980cbbf-1275-42e8-bd28-f65f503fbe81.png)
+
+
   </a>
 
   <h3 align="center">E-Commerce Website</h3>
