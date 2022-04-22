@@ -21,21 +21,11 @@
 ## Table of Contents
 
 - [About the Project](#about-the-project)
-  - [Built With](#built-with)
 - [Screenshots](#screenshots)
-  - [Home (News In)](#news-in)
-  - [Categories](#categories)
-  - [Product](#product)
-  - [Cart](#cart)
-  - [Account](#account)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-- [Issues / Feature Plans](#issues---future-plans)
-- [Contributing](#contributing)
-- [Questions & Answers](#q--a)
 - [License](#license)
-- [Contact](#contact)
 
 <!-- ABOUT THE PROJECT -->
 
