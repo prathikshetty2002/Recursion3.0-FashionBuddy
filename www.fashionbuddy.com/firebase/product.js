@@ -1,7 +1,9 @@
-import { firebase, auth, db } from "../config/firebase";
+import { firebase, auth, db, analytics } from "../config/firebase";
+
 
 function addFavorite(id) {
   const currentUser = auth.currentUser.uid;
+  // analytics.logEvent('add_to_fav', { item: id});
 
   return db
     .collection("Users")
@@ -23,6 +25,7 @@ function removeFavorite(id) {
 }
 
 function addToCart(newCart) {
+  // analytics.logEvent('add_to_cart', { items: newCart});
   const currentUser = auth.currentUser.uid;
 
   return db.collection("Users").doc(currentUser).update({
@@ -32,6 +35,8 @@ function addToCart(newCart) {
 
 function submitOrders(cart) {
   const currentUser = auth.currentUser.uid;
+  // analytics.logEvent('submit_order', { items: cart});
+
   return db.collection("Users").doc(currentUser).update({
     orders: firebase.firestore.FieldValue.arrayUnion(cart),
   });

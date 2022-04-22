@@ -1,4 +1,5 @@
 import firebase from "firebase";
+import "firebase/analytics";
 
 export const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -11,6 +12,7 @@ export const firebaseConfig = {
   storageBucket: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID + ".appspot.com",
   messagingSenderId: "327750059870",
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
 try {
@@ -24,6 +26,6 @@ try {
 const app = firebase.app();
 const auth = firebase.auth();
 const db = firebase.firestore();
-
-export { firebase, auth, db };
+// const analytics = firebase.analytics()
+export { firebase, auth, db, };
 console.log(app.name ? "Firebase Mode Activated!" : "Firebase not working :(");
