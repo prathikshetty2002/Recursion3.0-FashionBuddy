@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <a href="https://github.com/anilsenay/next-e-commerce">
+  
     <img src="https://i.ibb.co/ZzG3GtN/index.png" alt="Header photo" >
   </a>
 
@@ -41,10 +41,10 @@
 
 ## About The Project
 
-I saw a UI design on Dribbble by [Anton Mikhaltsov](https://dribbble.com/shots/9404340-Shop-Clothing-Web-Page). And I wanted to code this design. So I decided to make it a full working website with NextJS but in just 1 week as challenge myself. Some issues are still there but I will check out them later.
+Implemented a UI design on Dribbble by [Anton Mikhaltsov](https://dribbble.com/shots/9404340-Shop-Clothing-Web-Page).
 
 - Filter and Sort buttons are not working yet.
-- ~~Website is not responsive %100 because of time was not enought. I am working on it currently.~~ Now, it is responsive.
+- It is responsive.
 - Firebase functions could be better
 - Home page(News In) cards has no redirects. They are just placeholders.
 
